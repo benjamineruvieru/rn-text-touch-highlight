@@ -1,19 +1,51 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-text-touch-highlight';
+import { StyleSheet, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { HighlightText } from 'rn-text-touch-highlight';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const highlightRef: any = React.useRef();
 
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+  const getHighlightData = () => {
+    const data = highlightRef.current?.getHighlightedData();
+    console.log(data);
+  };
+  const deleteFun = (id) => {
+    highlightRef.current?.deleteHighlight(id);
+  };
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <HighlightText
+          ref={highlightRef}
+          clearHighlightOnTap={true}
+          highlightInitialDelay={500}
+          // initialHighlightData={[
+          //   { end: 24, start: 10 },
+          //   { end: 40, start: 30 },
+          // ]}
+          lineSpace={5}
+          lineBreakHeight={5}
+          textColor={'black'}
+          highlightedTextColor={'white'}
+          highlightColor={'blue'}
+          onHighlightStart={() => {
+            console.log('hightStart');
+          }}
+          onHighlightEnd={(id) => {
+            console.log('hightEnd', id);
+          }}
+          onHighlightTapped={(id, event) => {
+            console.log('tapped', id, event);
+          }}
+          textStyle={{ fontSize: 15 }}
+          backgroundColor="yellow"
+          text={`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.`}
+        />
+      </View>
+    </GestureHandlerRootView>
   );
 }
 
@@ -22,6 +54,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 30,
   },
   box: {
     width: 60,

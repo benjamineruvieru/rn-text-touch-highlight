@@ -1,7 +1,7 @@
 {
   "name": "rn-text-touch-highlight",
   "version": "0.1.0",
-  "description": "rn-text-touch-highlight  is a versatile and performant package for highlighting text in React Native",
+  "description": "React Native Text Highlighter is a versatile and user-friendly component that allows you to implement text highlighting and selection functionality in your React Native applications",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/src/index.d.ts",
@@ -37,7 +37,23 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "react",
+    "highlight",
+    "text",
+    "gesture",
+    "selection",
+    "interactive",
+    "reanimated",
+    "highlighting",
+    "text-highlighting",
+    "text-selection",
+    "text-marker",
+    "highlighting-library",
+    "text-highlight",
+    "UI-component",
+    "text-manipulation",
+    "touch-interaction"
   ],
   "repository": "https://github.com/benjamineruvieru/rn-text-touch-highlight",
   "author": "Benjamin <inbox@benjamineruvieru.com> (https://www.benjamineruvieru.com)",
@@ -45,7 +61,7 @@
   "bugs": {
     "url": "https://github.com/benjamineruvieru/rn-text-touch-highlight/issues"
   },
-  "homepage": "https://github.com/benjamineruvieru/rn-text-touch-highlight#readme",
+  "homepage": "https://docs.benjamineruvieru.com/rn-text-touch-highlight",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -74,8 +90,10 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-native": "*"
+    "react": ">=18.0.0",
+    "react-native": ">=0.70.0",
+    "react-native-gesture-handler": ">=2.10.0",
+    "react-native-reanimated": ">=2.12.0"
   },
   "workspaces": [
     "example"
