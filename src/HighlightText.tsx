@@ -1,11 +1,13 @@
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import React, { memo, useCallback, useMemo, useRef } from 'react';
+//@ts-ignore
 import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 import Animated, {
   runOnJS,
   useAnimatedStyle,
   useDerivedValue,
   useSharedValue,
+  //@ts-ignore
 } from 'react-native-reanimated';
 import {
   findValueLessThanOrEqualToNumber,
@@ -17,6 +19,7 @@ import type {
   GestureStateChangeEvent,
   PanGestureHandlerEventPayload,
   TapGestureHandlerEventPayload,
+  //@ts-ignore
 } from 'react-native-gesture-handler';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
@@ -370,9 +373,12 @@ const HighlightText: React.ForwardRefExoticComponent<
         backgroundColor,
       },
     });
-    const onLayout = useCallback((e: LayoutChangeEvent) => {
-      layout.value = e.nativeEvent.layout;
-    }, []);
+    const onLayout = useCallback(
+      (e: LayoutChangeEvent) => {
+        layout.value = e.nativeEvent.layout;
+      },
+      [layout]
+    );
     return (
       <GestureDetector gesture={composed}>
         <View style={styles.mainViewStyle} onLayout={onLayout}>

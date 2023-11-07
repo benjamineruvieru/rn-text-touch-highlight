@@ -17,14 +17,14 @@ export default function App() {
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Button title="Get highlight data" onPress={getHighlightData} />
-      <Button
-        title="Delete highlight"
-        onPress={() => {
-          deleteFun(1);
-        }}
-      />
       <View style={styles.container}>
+        <Button title="Get highlight data" onPress={getHighlightData} />
+        <Button
+          title="Delete highlight"
+          onPress={() => {
+            deleteFun(1);
+          }}
+        />
         <HighlightText
           ref={highlightRef}
           clearHighlightOnTap={true}
