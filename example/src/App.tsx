@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View } from 'react-native';
+import { Button, StyleSheet, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { HighlightText } from 'rn-text-touch-highlight';
 
@@ -11,21 +11,28 @@ export default function App() {
     const data = highlightRef.current?.getHighlightedData();
     console.log(data);
   };
-  const deleteFun = (id) => {
+  const deleteFun = (id: number) => {
     highlightRef.current?.deleteHighlight(id);
   };
 
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <Button title="Get highlight data" onPress={getHighlightData} />
+      <Button
+        title="Delete highlight"
+        onPress={() => {
+          deleteFun(1);
+        }}
+      />
       <View style={styles.container}>
         <HighlightText
           ref={highlightRef}
           clearHighlightOnTap={true}
           highlightInitialDelay={500}
-          // initialHighlightData={[
-          //   { end: 24, start: 10 },
-          //   { end: 40, start: 30 },
-          // ]}
+          initialHighlightData={[
+            { end: 24, start: 10 },
+            { end: 40, start: 30 },
+          ]}
           lineSpace={5}
           lineBreakHeight={5}
           textColor={'black'}
