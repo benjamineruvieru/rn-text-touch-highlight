@@ -1,5 +1,17 @@
 # React Native Text Touch Highlighter
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/rn-text-touch-highlight">
+    <img alt="npm version" src="https://badge.fury.io/js/rn-text-touch-highlight.svg"/>
+  </a>
+  <a title='License' href="https://github.com/benjamineruvieru/rn-text-touch-highlight/blob/master/LICENSE" height="18">
+    <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
+  </a>
+  <a title='Tweet' href="https://twitter.com/intent/tweet?text=Check%20out%20this%20awesome%20React%20Native%20PDF%20from%20Image%20Library&url=https://github.com/benjamineruvieru/rn-text-touch-highlight&via=benjamin_eru&hashtags=react,reactnative,opensource,github,ux" height="18">
+    <img src='https://img.shields.io/twitter/url/http/shields.io.svg?style=social' />
+  </a>
+</p>
+
 React Native Text Touch Highlighter is a user friendly component library that enables users to effortlessly tap and drag to highlight text in React Native applications. This package simplifies the integration of text selection and annotation features, making it an ideal solution for mobile apps that require text highlighting or document annotation.
 
 <p align="center">
