@@ -61,7 +61,7 @@
   "bugs": {
     "url": "https://github.com/benjamineruvieru/rn-text-touch-highlight/issues"
   },
-  "homepage": "https://docs.benjamineruvieru.com/rn-text-touch-highlight",
+  "homepage": "https://docs.benjamineruvieru.com/docs/rn-text-touch-highlight",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
